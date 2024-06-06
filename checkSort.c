@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int checkSort(int *array, int size)
+int checkSort(int *array, int size, unsigned int *sorted)
 {
     /* Left side is always lower to all right side */
     for(int i = 0; i < (size - 1); i++)
@@ -13,6 +13,10 @@ int checkSort(int *array, int size)
                 printf("i: %d j: %d\n", i, j);
                 return 0;
             }
+            else if(array[i] == array[j])
+            {
+                *sorted = 1;
+            }
         }
     }
     return 1;
@@ -21,11 +25,16 @@ int checkSort(int *array, int size)
 
 int main()
 {
-    int array[] = {1,2,2,5,1};
+    int array[] = {1,2,2,5,7};
+    unsigned int sortedFLG = 0;
 
-    if(checkSort(array, sizeof(array)/sizeof(int)))
+    if(checkSort(array, sizeof(array)/sizeof(int), &sortedFLG) && sortedFLG)
     {
         printf("SORTED\n");
+    }
+    else if(checkSort(array, sizeof(array)/sizeof(int), &sortedFLG)) 
+    {
+        printf("REALLY SORTED\n");
     }
     else
     {
