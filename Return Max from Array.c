@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define num1 *(ptr + i)
-#define num2 *(ptr + (i + 1))
 int returnMax(int *ptr, int size)
 {
     int i = 1;
