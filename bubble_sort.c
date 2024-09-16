@@ -25,6 +25,8 @@ void bubble_sort(int *array, unsigned int size)
     {
         bubble_sort(array, size - 1);
     }
+
+    printf("bubble sort");
 }
 
 // Display Array
