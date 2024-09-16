@@ -8,6 +8,8 @@ void swap(int *num1, int *num2)
     *num2 = temp;
 
 }
+
+// Bubble sort
 void bubble_sort(int *array, unsigned int size)
 {
     int swap_count = 0;
@@ -25,6 +27,7 @@ void bubble_sort(int *array, unsigned int size)
     }
 }
 
+// Display Array
 void dispArr(int *arr, int size)
 {
     printf("elements: ");
